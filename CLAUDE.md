@@ -1,5 +1,10 @@
 # DruidaVision2 FREE — Medidor PPFD táctil (versión liberada)
 
+> **Repo (29-jun-2026):** versionado por 1ª vez en **`Pergah/DruidaVision2free`** (GitHub,
+> **público**, remote `origin`, rama `main`). El `.gitignore` excluye `build/` y `*.bin`, así que
+> los binarios de `flash/` NO están en el repo (sólo fuente + scripts esptool); si querés que los
+> makers flasheen sin compilar, subir las 4 bins como **Release asset**, no al árbol git.
+
 > **⚠ Esta es la variante FREE/offline** (carpeta `DruidaVision2free`, sketch
 > `DruidaVision2free.ino`, `DV_FW_VERSION = "2.0-free"`). Clon de `DruidaVision2`
 > con un único delta funcional, todo en `ui.h`:
