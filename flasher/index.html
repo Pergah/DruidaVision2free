@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DruidaVision Free — Flasher USB</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js"></script>
+  <style>
+    :root { --bg:#001018; --panel:#08222e; --cyan:#33d6e6; --cyan2:#8fe9f2; --grey:#9fb3c8; --white:#eaf6f9; --warn:#ffcf6b; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; background:var(--bg); color:var(--white);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      display:flex; align-items:center; justify-content:center; padding:24px; }
+    .card { background:var(--panel); border:2px solid var(--cyan); border-radius:14px;
+      max-width:520px; width:100%; padding:28px 26px; }
+    h1 { color:var(--cyan); margin:0 0 4px; font-size:1.5rem; text-align:center; }
+    .ver { color:var(--grey); font-size:.85rem; margin-bottom:18px; text-align:center; }
+    .keep { color:var(--white); background:rgba(51,214,230,.1); border-radius:8px;
+            padding:10px 12px; font-size:.9rem; margin-bottom:18px; text-align:center; }
+    ol { color:var(--cyan2); line-height:1.6; padding-left:22px; margin:0 0 20px; }
+    ol b { color:var(--white); }
+    .btnwrap { text-align:center; }
+    button[slot="activate"] { background:var(--cyan); color:#001018; border:0; border-radius:10px;
+      font-size:1.05rem; font-weight:600; padding:14px 22px; cursor:pointer; }
+    button[slot="activate"]:hover { background:var(--cyan2); }
+    .note { color:var(--grey); font-size:.8rem; margin-top:22px; line-height:1.5; }
+    .warn { color:var(--warn); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>DruidaVision Free</h1>
+    <div class="ver">Firmware 2.0-free · actualización por USB</div>
+
+    <div class="keep">✔ Conserva tu calibración y configuración.</div>
+
+    <ol>
+      <li>En el medidor, andá a <b>Calib → Actualizar por USB</b> y confirmá <b>“Sí, actualizar”</b>. La pantalla se apaga: quedó en modo USB.</li>
+      <li>Conectá el equipo a la PC con el cable <b>USB-C de datos</b>.</li>
+      <li>Apretá <b>Conectar y flashear</b> y elegí el puerto nuevo (suele decir <i>USB JTAG/serial</i>).</li>
+      <li>Esperá a que termine. El equipo se reinicia solo con el firmware nuevo.</li>
+    </ol>
+
+    <div class="btnwrap">
+      <esp-web-install-button manifest="./manifest.json">
+        <button slot="activate">Conectar y flashear</button>
+        <span slot="unsupported" class="warn">Tu navegador no soporta WebSerial. Usá <b>Chrome</b> o <b>Edge</b> de escritorio.</span>
+        <span slot="not-allowed" class="warn">El flasheo requiere una conexión segura (HTTPS).</span>
+      </esp-web-install-button>
+    </div>
+
+    <div class="note">
+      <b>Importante:</b> hacé el paso 1 en el equipo <u>antes</u> de flashear. Si salteás ese paso,
+      el flasheo puede fallar.<br>
+      Si la pantalla quedó apagada y querés cancelar sin actualizar: desenchufá y enchufá de nuevo.<br>
+      ¿Problemas? Probá otro cable USB (de datos) y un puerto directo de la PC, o contactá a soporte.
+    </div>
+  </div>
+</body>
+</html>

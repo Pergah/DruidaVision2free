@@ -1,0 +1,14 @@
+# Salida de compilacion de Arduino IDE (binarios grandes, no versionar)
+/build/
+*.bin
+*.elf
+*.map
+*.hex
+
+# Sistema / editores
+Thumbs.db
+.DS_Store
+*.swp
+
+# Claude Code (config/sesiones locales)
+.claude/
